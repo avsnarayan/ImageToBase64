@@ -30,6 +30,7 @@ namespace ImageToBase64
 
         private void convert(string fileName)
         {
+            Cursor.Current = Cursors.WaitCursor;
             if (!File.Exists(fileName))
             {
                 MessageBox.Show("File :" + fileName + " can not be found.", "Error", MessageBoxButtons.OK);
@@ -57,6 +58,7 @@ namespace ImageToBase64
             {
                 MessageBox.Show("Error: "+ exp.Message, "Error", MessageBoxButtons.OK);
             }
+            Cursor.Current = Cursors.Default;
         }
         private void FrmImagetoBase64Main_DragDrop(object sender, DragEventArgs e)
         {
@@ -87,6 +89,12 @@ namespace ImageToBase64
         private void FrmImagetoBase64Main_DragEnter(object sender, DragEventArgs e)
         {
             e.Effect = DragDropEffects.Copy;
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtBase64String.Text = string.Empty;
+            txtFilePath.Text = string.Empty;
         }
     }
 }

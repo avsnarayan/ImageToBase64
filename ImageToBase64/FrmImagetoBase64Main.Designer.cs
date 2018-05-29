@@ -77,6 +77,7 @@
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // txtBase64String
             // 
